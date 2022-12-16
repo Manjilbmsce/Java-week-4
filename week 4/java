@@ -1,0 +1,68 @@
+import java.util.Scanner;
+abstract class shape
+{
+	int a,b;
+	double area;
+	shape(int x,int y)
+	{
+		a=x;
+		b=y;
+		area=0;
+	}
+	abstract void printArea();
+}
+class Rectangle extends shape
+{
+	Rectangle(int x,int y)
+	{
+		super(x,y);
+	}
+	void printArea()
+	{
+		area=a*b;
+		System.out.println("The length and breadth of a rectangle : 22 & 15");
+		System.out.println("Area of Rectangle="+" "+area);
+	}
+}
+class triangle extends shape
+{
+	triangle (int x,int y)
+	{
+		super(x,y);
+	}
+	void printArea()
+	{
+		area=(a*b)*(0.5);
+		System.out.println("The base and height of a triangle: 12 & 12");
+		System.out.println("Area of Triangle="+" "+area);
+	}
+}
+class circle extends shape
+{
+	circle(int x)
+	{
+		super(x,1);
+	}
+	void printArea()
+	{
+		area=3.142*Math.pow(a,2);
+		System.out.println("The radius of the circle : 10");
+		System.out.println("Area of circle="+" "+area);
+	}
+}
+class Main
+{
+	public static void main(String args[])
+	{
+		Rectangle r1=new Rectangle(22,15);
+		triangle t1=new triangle(12,12);
+		circle c1=new circle(10);
+		shape ref;
+		ref=r1;
+		ref.printArea();
+		ref=t1;
+		ref.printArea();
+		ref=c1;
+		ref.printArea();
+	}
+}
